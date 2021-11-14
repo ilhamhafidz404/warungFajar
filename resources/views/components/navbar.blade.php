@@ -12,7 +12,20 @@
       <i class="fad fa-chevron-double-down"></i>
     </button>
 
-    <div id="navbar" class="animated md:hidden md:fixed md:top-0 md:w-full md:left-0 md:mt-16 md:border-t md:border-b md:border-gray-200 md:p-10 md:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-end items-center md:flex-col md:items-center">     
+    <div id="navbar" class="animated md:hidden md:fixed md:top-0 md:w-full md:left-0 md:mt-16 md:border-t md:border-b md:border-gray-200 md:p-10 md:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-between items-center md:flex-col md:items-center">
+        <div class="flex flex-row-reverse items-center">
+            <ul class="flex items-center">
+                <li class="mr-5">
+                    <a href="{{ route('dashboard') }}" class="hover:text-gray-500 {{request()->is('/') ? 'text-blue-400' : ''}}">Dashboard</a>
+                </li>
+                <li class="mr-5">
+                    <a href="{{ route('add-product') }}" class="hover:text-gray-500 {{request()->is('add-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tambah Produk</a>
+                </li>
+                <li>
+                    <a href="">fewf</a>
+                </li>
+            </ul>
+        </div>
         <div class="flex flex-row-reverse items-center"> 
             <div class="dropdown relative md:static">
                 <button class="menu-btn focus:outline-none focus:shadow-outline flex flex-wrap items-center">

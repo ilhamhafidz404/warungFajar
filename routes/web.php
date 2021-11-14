@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Dashboard;
+use App\Http\Livewire\TambahProduct;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 //     return view('app');
 // });
 
-Route::get('/', Dashboard::class);
+Route::get('/', Dashboard::class)->name('dashboard');
+Route::get('/add-product', TambahProduct::class)->name('add-product');
