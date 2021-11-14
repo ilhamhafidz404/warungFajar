@@ -5,42 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
   <link rel="shortcut icon" href="{{asset('cleopatra/dist')}}/img/fav.png" type="image/x-icon">  
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
-  <link rel="stylesheet" type="text/css" href="{{asset('cleopatra/dist')}}/css/style.css">  
+  <link rel="stylesheet" type="text/css" href="{{asset('cleopatra/dist')}}/css/style.css"> 
+  @livewireStyles 
   <title>Warung Fajar</title>
 </head>
 <body class="bg-gray-100">
 
-
-<div class="md:fixed md:w-full md:top-0 md:z-20 flex flex-row flex-wrap items-center bg-white p-6 border-b border-gray-300">
-    <div class="flex-none w-56 flex flex-row items-center">
-      <img src="{{asset('cleopatra/dist')}}/img/logo.png" class="w-10 flex-none">
-      <strong class="capitalize ml-1 flex-1">Warung Fajar</strong>
-
-      <button id="sliderBtn" class="flex-none text-right text-gray-900 hidden md:block">
-        <i class="fad fa-list-ul"></i>
-      </button>
-    </div> 
-    
-    <button id="navbarToggle" class="hidden md:block md:fixed right-0 mr-6">
-      <i class="fad fa-chevron-double-down"></i>
-    </button>
-
-    <div id="navbar" class="animated md:hidden md:fixed md:top-0 md:w-full md:left-0 md:mt-16 md:border-t md:border-b md:border-gray-200 md:p-10 md:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-end items-center md:flex-col md:items-center">     
-        <div class="flex flex-row-reverse items-center"> 
-            <div class="dropdown relative md:static">
-                <button class="menu-btn focus:outline-none focus:shadow-outline flex flex-wrap items-center">
-                    <div class="w-8 h-8 overflow-hidden rounded-full">
-                        <img class="w-full h-full object-cover" src="{{asset('cleopatra/dist')}}/img/user.svg" >
-                    </div> 
-                    <div class="ml-2 capitalize flex ">
-                        <h1 class="text-sm text-gray-800 font-semibold m-0 p-0 leading-none">Dika Fajar</h1>
-                    </div>                        
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
+<x-navbar></x-navbar>
 
 <div class="h-screen flex flex-row flex-wrap">
   <div id="sideBar" class="relative flex flex-col flex-wrap bg-white border-r border-gray-300 p-6 flex-none w-64 md:-ml-64 md:fixed md:top-0 md:z-30 md:h-screen md:shadow-xl animated faster">
@@ -155,12 +126,14 @@
             <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
         </div>
     </div>
+    @yield('content')
   </div>
-
 </div>
 
 <!-- script -->
+@livewireScripts
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
 <script src="{{asset('cleopatra/dist')}}/js/scripts.js"></script>
 <!-- end script -->
 
