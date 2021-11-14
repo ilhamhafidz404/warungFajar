@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use Livewire\Component;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TambahProduct extends Component
 {
@@ -30,6 +31,7 @@ class TambahProduct extends Component
             'total' => $this->total,
         ]);
 
+        Alert::success('Berhasil Menambah Barang');
         return redirect()->route('dashboard');
     }
 

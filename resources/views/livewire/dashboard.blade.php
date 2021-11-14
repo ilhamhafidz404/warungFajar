@@ -5,7 +5,7 @@
     </div>
     
     <section class="products mt-8">
-        <div class="grid grid-cols-3 gap-2">
+        <div class="grid grid-cols-3 gap-3">
             @foreach ($products as $product)
                 <div class="card p-3">
                     <h1>{{$product->nama}}</h1>
