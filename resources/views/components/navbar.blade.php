@@ -21,9 +21,6 @@
                 <li class="mr-5">
                     <a href="{{ route('add-product') }}" class="hover:text-gray-500 {{request()->is('add-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tambah Produk</a>
                 </li>
-                <li>
-                    <a href="">fewf</a>
-                </li>
             </ul>
         </div>
         <div class="flex flex-row-reverse items-center"> 

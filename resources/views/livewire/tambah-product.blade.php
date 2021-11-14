@@ -9,17 +9,19 @@
                 <label for="modal" class="text-gray-600">Modal</label><br>
                 <input type="number" name="modal" class=" mt-3 border w-full rounded-lg p-2" id="modal" wire:model="modal">
             </div>
-            <div class="form-group mb-8">
-                <label for="harga_jual_minim" class="text-gray-600">Harga Jual Minim</label><br>
-                <input type="number" name="harga_jual_minim" class=" mt-3 border w-full rounded-lg p-2" id="harga_jual_minim" wire:model="harga_jual_minim">
-            </div>
-            <div class="form-group mb-8">
-                <label for="harga_jual_sedang" class="text-gray-600">Harga Jual Sedang</label><br>
-                <input type="number" name="harga_jual_sedang" class=" mt-3 border w-full rounded-lg p-2" id="harga_jual_sedang" wire:model="harga_jual_sedang">
-            </div>
-            <div class="form-group mb-8">
-                <label for="harga_jual_mahal" class="text-gray-600">Harga Jual Mahal</label><br>
-                <input type="number" name="harga_jual_mahal" class=" mt-3 border w-full rounded-lg p-2" id="harga_jual_mahal" wire:model="harga_jual_mahal">
+            <div class="grid grid-cols-3 gap-4">
+                <div class="form-group mb-8">
+                    <label for="harga_jual_minim" class="text-gray-600">Harga Jual Minim</label><br>
+                    <input type="number" name="harga_jual_minim" class=" mt-3 border w-full rounded-lg p-2" id="harga_jual_minim" wire:model="harga_jual_minim">
+                </div>
+                <div class="form-group mb-8">
+                    <label for="harga_jual_sedang" class="text-gray-600">Harga Jual Sedang</label><br>
+                    <input type="number" name="harga_jual_sedang" class=" mt-3 border w-full rounded-lg p-2" id="harga_jual_sedang" wire:model="harga_jual_sedang">
+                </div>
+                <div class="form-group mb-8">
+                    <label for="harga_jual_mahal" class="text-gray-600">Harga Jual Mahal</label><br>
+                    <input type="number" name="harga_jual_mahal" class=" mt-3 border w-full rounded-lg p-2" id="harga_jual_mahal" wire:model="harga_jual_mahal">
+                </div>
             </div>
             <div class="form-group mb-8">
                 <label for="jumlah" class="text-gray-600">Jumlah</label><br>
