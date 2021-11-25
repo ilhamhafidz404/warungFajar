@@ -55,7 +55,13 @@
                 </div>
             </div>
 
-            <button class="bg-blue-500 px-10 py-2 rounded text-white">Submit</button>
+            <div class="flex justify-between w-full mt-10">
+                <a href="{{ route('dashboard') }}" class="border border-red-500 px-10 py-2 rounded text-red-500 hover:bg-red-500 hover:text-white">kembali</a>
+                <div class="flex">
+                    <button type="reset" class="hover:bg-red-400 bg-red-500 mr-5 px-10 py-2 rounded text-white">Reset</button>
+                    <button class="hover:bg-blue-300 bg-blue-400 px-20 py-2 rounded text-white">Submit</button>
+                </div>
+            </div>
         </form>
     </div>
 </div>
