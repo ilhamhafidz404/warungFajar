@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -9,7 +10,8 @@ use RealRashid\SweetAlert\Facades\Alert;
 class Dashboard extends Component
 {
     public $products = [];
-    public $search;
+    public $categories= [];
+    public $search, $filterCategory;
     public $updateProduct= false;
 
     protected $listeners =[
@@ -18,7 +20,15 @@ class Dashboard extends Component
 
     public function render()
     {
-        $this->products = Product::where('nama', 'LIKE', '%'.$this->search.'%')->latest()->get();
+        if(!$this->filterCategory){
+            $this->products = Product::where('nama', 'LIKE', '%'.$this->search.'%')
+                                        ->latest()->get();
+        } else{
+            $this->products = Product::where('nama', 'LIKE', '%'.$this->search.'%')
+                                        ->where('category_id', $this->filterCategory)
+                                        ->latest()->get();
+        }
+        $this->categories= Category::all();
         return view('livewire.dashboard')->extends('app')->section('content');
     }
 
@@ -36,5 +46,9 @@ class Dashboard extends Component
         Product::find($id)->delete();
         Alert::toast('Dagangan Dihapus', 'success');
         return redirect()->route('dashboard');
+    }
+
+    public function filterCategory($category){
+        $this->filterCategory= $category;
     }
 }

@@ -1,17 +1,51 @@
 <div>
-    <div class="card mt-10 p-10">
-        <h6 class="mb-5 font-bold">Cari Barang</h6>
-        <input type="text" class="border w-full p-3 rounded-lg" placeholder="search.." wire:model="search">
+    <div class="card mt-10 p-10 grid grid-cols-3 gap-5">
+        <div class="searchProduct  col-span-2">
+            <h6 class="mb-5 font-bold">Cari Barang</h6>
+            <input type="text" class="border w-full p-3 rounded-lg" placeholder="search.." wire:model="search">
+        </div>
+        <div class="filterCategory" style="overflow: auto; white-space: nowrap">
+            <h6 class="mb-5 font-bold">Filter Kategori</h6>
+            <input type="hidden" class="border" wire:model="filterCategory">
+            @if ($filterCategory == 0)
+                <button type="button" wire:click="filterCategory(0)" class="inline-flex items-center p-3 rounded bg-gray-900 text-white hover:opacity-50">
+                    <i class="fad fa-clipboard-list-check text-xl mr-1"></i>
+                    <small>semua</small>
+                </button>
+            @else
+                <button type="button" wire:click="filterCategory(0)" class="inline-flex items-center p-3 rounded border border-gray-900 text-gray-900 hover:opacity-50">
+                    <i class="fad fa-clipboard-list-check text-xl mr-1"></i>
+                    <small>semua</small>
+                </button>
+            @endif
+            @foreach ($categories as $category)
+                @if ($filterCategory == $category->id)
+                    <button type="button" wire:click="filterCategory({{ $category->id }})" class="inline-flex items-center p-3 rounded text-white hover:opacity-50" style="background-color: {{ $category->color }}">
+                        <i class="fas fa-{{ $category->icon }} text-xl mr-1"></i>
+                        <small>{{ $category->nama }}</small>
+                    </button>
+                @else
+                    <button type="button" wire:click="filterCategory({{ $category->id }})" class="inline-flex items-center p-3 rounded hover:opacity-50 border bg-gray-100" style="border-color: {{ $category->color }}; color: {{ $category->color }}">
+                        <i class="fas fa-{{ $category->icon }} text-xl mr-1"></i>
+                        <small>{{ $category->nama }}</small>
+                    </button>
+                @endif
+            @endforeach
+        </div>
     </div>
+    
     
     <section class="products mt-8">
         <div class="grid grid-cols-3 gap-3">
-            @foreach ($products as $product)
+            @forelse ($products as $product)
                 <div class="report-card">
                     <div class="card">
-                        <div class="card-body flex flex-col">
+                        <div class="card-body flex flex-col relative">
+                            <span class="category badge rounded-lg text-xs text-white absolute top-0 right-0 m-3" style="background: {{ $product->category->color }}">
+                                <i class="fas fa-{{$product->category->icon}}"></i> {{ $product->category->nama }}
+                            </span>
                             <div class="mt-8">
-                                <h3 class="">{{ $product->nama }}</h3>
+                                <h3>{{ $product->nama }}</h3>
                                 <p>Modal : {{ number_format($product->modal) }}</p>
                             </div>
                             <div class="text-right">
@@ -24,9 +58,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="footer bg-blue-200 p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
+                    <div class="footer p-1 mx-4 border border-t-0 rounded rounded-t-none" style="background-color: {{ $product->category->color }}"></div>
                 </div>
-            @endforeach
+            @empty
+            <h1 class="text-xl text-center">Tidak ada yang terkait dengan 
+                @if (!$search)
+                    kategori ini
+                @else
+                    <span class="font-bold">{{ $search }}</span>
+                @endif
+            </h1>
+            @endforelse
         </div>
 
         @if ($updateProduct)
