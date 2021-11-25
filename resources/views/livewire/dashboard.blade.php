@@ -7,14 +7,30 @@
     <section class="products mt-8">
         <div class="grid grid-cols-3 gap-3">
             @foreach ($products as $product)
-                <div class="card p-3">
-                    <h1>{{$product->nama}}</h1>
-                    <div class="mt-2 flex justify-between">
-                        <small class="text-gray-500">Rp. {{number_format($product->modal)}}</small>
-                        <small class="bg-red-500 px-3 rounded-lg text-white">{{number_format($product->jumlah)}}</small>
+                <div class="report-card">
+                    <div class="card">
+                        <div class="card-body flex flex-col">
+                            <div class="mt-8">
+                                <h3 class="">{{ $product->nama }}</h3>
+                                <p>Modal : {{ number_format($product->modal) }}</p>
+                            </div>
+                            <div class="text-right">
+                                <button wire:click="getProduct({{ $product->id }})">
+                                    <i class="fas fa-pen-alt bg-blue-500 text-white p-1 rounded"></i>
+                                </button>
+                                <button wire:click='destroy({{$product->id}})'>
+                                    <i class="fas fa-trash-alt bg-red-500 text-white p-1 rounded"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
+                    <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
                 </div>
             @endforeach
         </div>
+
+        @if ($updateProduct)
+            @livewire('update-product')
+        @endif
     </section>
 </div>

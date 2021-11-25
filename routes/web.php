@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\TambahProduct;
+use App\Http\Livewire\TableList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Dashboard::class)->name('dashboard');
 Route::get('/add-product', TambahProduct::class)->name('add-product');
+Route::get('/table-product', TableList::class)->name('table-product');
+// Route::get('/update-product/{id}', UpdateProduct::class)->name('update-product');

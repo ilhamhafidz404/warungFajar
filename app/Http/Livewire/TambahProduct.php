@@ -10,16 +10,18 @@ class TambahProduct extends Component
 {
     public $nama, $modal, $harga_jual_minim, $harga_jual_sedang, $harga_jual_mahal, $jumlah, $total;
 
+    protected $rules= [
+        'nama' => 'required',
+        'modal' => 'numeric|required',
+        'harga_jual_minim' => 'numeric|required',
+        'harga_jual_sedang' => 'numeric|required',
+        'harga_jual_mahal' => 'numeric|required',
+        'jumlah' => 'numeric|required',
+        'total' => 'numeric|required',
+    ];
+
     public function store(){
-        $this->validate([
-            'nama' => 'required',
-            'modal' => 'required',
-            'harga_jual_minim' => 'required',
-            'harga_jual_sedang' => 'required',
-            'harga_jual_mahal' => 'required',
-            'jumlah' => 'required',
-            'total' => 'required',
-        ]);
+        $this->validate();
 
         Product::create([
             'nama' => $this->nama,

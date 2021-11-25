@@ -19,6 +19,9 @@
                     <a href="{{ route('dashboard') }}" class="hover:text-gray-500 {{request()->is('/') ? 'text-blue-400' : ''}}">Dashboard</a>
                 </li>
                 <li class="mr-5">
+                    <a href="{{ route('table-product') }}" class="hover:text-gray-500 {{request()->is('table-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tabel Produk</a>
+                </li>
+                <li class="mr-5">
                     <a href="{{ route('add-product') }}" class="hover:text-gray-500 {{request()->is('add-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tambah Produk</a>
                 </li>
             </ul>

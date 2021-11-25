@@ -17,8 +17,9 @@
   
 
   <div class="bg-gray-100 flex-1 p-6 md:mt-16"> 
-    <x-report-card></x-report-card>
     @yield('content')
+    <br><br><br>
+    {{-- <x-report-card></x-report-card> --}}
   </div>
 </div>
 

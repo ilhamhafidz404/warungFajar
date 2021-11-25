@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Product;
 use Illuminate\View\Component;
 
 class ReportCard extends Component
@@ -11,9 +12,13 @@ class ReportCard extends Component
      *
      * @return void
      */
-    public function __construct()
+    public $productModal, $productJumlah, $productTotal, $products;
+    public function __construct($productModal, $productJumlah, $productTotal, $products)
     {
-        //
+        $this->products= $products;
+        $this->productModal= $productModal;
+        $this->productJumlah= $productJumlah;
+        $this->productTotal= $productTotal;
     }
 
     /**
@@ -23,6 +28,8 @@ class ReportCard extends Component
      */
     public function render()
     {
-        return view('components.report-card');
+        $productCount= Product::count();
+        $modalCount= 0;
+        return view('components.report-card', compact('productCount', 'modalCount'));
     }
 }
