@@ -22,9 +22,11 @@ class Dashboard extends Component
     {
         if(!$this->filterCategory){
             $this->products = Product::where('nama', 'LIKE', '%'.$this->search.'%')
+                                        ->with('category')
                                         ->latest()->get();
         } else{
             $this->products = Product::where('nama', 'LIKE', '%'.$this->search.'%')
+                                        ->with('category')
                                         ->where('category_id', $this->filterCategory)
                                         ->latest()->get();
         }

@@ -23,6 +23,20 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="form-group md:mb-1 mb-5">
+                        <label for="category" class="text-gray-600">Kategori</label><br>
+                        <select name="category" id="category" class="w-full p-3 mt-3 rounded-lg" wire:model="category_id">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}" 
+                                    @if($category->id == $category_id) selected @endif>
+                                    {{ $category->nama }}
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('modal')
+                            <small class="text-red-500">{{$message}}</small>
+                        @enderror
+                    </div>
                     <div class="grid md:grid-cols-1 grid-cols-3 md:gap-1 gap-4">
                         <div class="form-group md:mb-1 mb-5">
                             <label for="harga_jual_minim" class="text-gray-600">Harga Jual Minim</label><br>

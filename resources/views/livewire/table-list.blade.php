@@ -21,7 +21,7 @@
                     $productTotal = 0;
                 @endphp
                 @foreach ($products as $index=> $product)
-                <tr class="@if($index%2==1) bg-gray-100 @endif">
+                <tr class="@if($index%2==1) bg-gray-100 @endif hover:bg-gray-200">
                     <td class="text-center p-5">{{ $index+1 }}</td>
                     <td class="text-center">{{ $product->nama }}</td>
                     <td class="text-center">
