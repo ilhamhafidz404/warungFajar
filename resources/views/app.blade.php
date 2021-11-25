@@ -8,6 +8,16 @@
   <link rel="stylesheet" type="text/css" href="{{asset('cleopatra/dist')}}/css/style.css"> 
   @livewireStyles 
   <title>Warung Fajar</title>
+  <style>
+    .filterCategory::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    .filterCategory::-webkit-scrollbar-thumb {
+      background-color: rgba(169, 169, 169, 0.699);
+      border-radius: 10px
+    }
+  </style>
 </head>
 <body class="bg-gray-100">
 

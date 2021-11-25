@@ -4,7 +4,7 @@
             <h6 class="mb-5 font-bold">Cari Barang</h6>
             <input type="text" class="border w-full p-3 rounded-lg" placeholder="search.." wire:model="search">
         </div>
-        <div class="filterCategory" style="overflow: auto; white-space: nowrap">
+        <div class="filterCategory pb-2 overflow-auto" style="white-space: nowrap">
             <h6 class="mb-5 font-bold">Filter Kategori</h6>
             <input type="hidden" class="border" wire:model="filterCategory">
             @if ($filterCategory == 0)
@@ -36,7 +36,7 @@
     
     
     <section class="products mt-8">
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-3">
             @forelse ($products as $product)
                 <div class="report-card">
                     <div class="card">
@@ -61,13 +61,15 @@
                     <div class="footer p-1 mx-4 border border-t-0 rounded rounded-t-none" style="background-color: {{ $product->category->color }}"></div>
                 </div>
             @empty
-            <h1 class="text-xl text-center">Tidak ada yang terkait dengan 
-                @if (!$search)
-                    kategori ini
-                @else
-                    <span class="font-bold">{{ $search }}</span>
-                @endif
-            </h1>
+            <div class="absolute">
+                <h1 class="text-xl text-center">Tidak ada yang terkait dengan 
+                    @if (!$search)
+                        kategori ini
+                    @else
+                        <span class="font-bold">{{ $search }}</span>
+                    @endif
+                </h1>
+            </div>
             @endforelse
         </div>
 

@@ -8,7 +8,7 @@
                 <tr class="border p-5 bg-gray-900 text-white">
                     <th class="p-3">No</th>
                     <th>Nama Barang</th>
-                    <th>Modal</th>
+                    <th>Kategori</th>
                     <th>Modal</th>
                     <th>Jumlah</th>
                     <th>Total</th>
@@ -24,7 +24,12 @@
                 <tr class="@if($index%2==1) bg-gray-100 @endif">
                     <td class="text-center p-5">{{ $index+1 }}</td>
                     <td class="text-center">{{ $product->nama }}</td>
-                    <td class="text-center">Rp. {{ number_format($product->modal) }}</td>
+                    <td class="text-center">
+                        <span class="px-3 py-1 rounded-lg text-white text-xs" style="background-color: {{ $product->category->color }}">
+                            <i class="fas fa-{{ $product->category->icon }}"></i>
+                            {{ $product->category->nama }}
+                        </span>
+                    </td>
                     <td class="text-center">Rp. {{ number_format($product->modal) }}</td>
                     <td class="text-center">Rp. {{ number_format($product->jumlah) }}</td>
                     <td class="text-center">Rp. {{ number_format($product->total) }}</td>
