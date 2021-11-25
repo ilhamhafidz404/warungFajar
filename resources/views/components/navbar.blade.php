@@ -2,10 +2,6 @@
     <div class="flex-none w-56 flex flex-row items-center">
       <img src="{{asset('cleopatra/dist')}}/img/logo.png" class="w-10 flex-none">
       <strong class="capitalize ml-1 flex-1">Warung Fajar</strong>
-
-      <button id="sliderBtn" class="flex-none text-right text-gray-900 hidden md:block">
-        <i class="fad fa-list-ul"></i>
-      </button>
     </div> 
     
     <button id="navbarToggle" class="hidden md:block md:fixed right-0 mr-6">
@@ -14,19 +10,19 @@
 
     <div id="navbar" class="animated md:hidden md:fixed md:top-0 md:w-full md:left-0 md:mt-16 md:border-t md:border-b md:border-gray-200 md:p-10 md:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-between items-center md:flex-col md:items-center">
         <div class="flex flex-row-reverse items-center">
-            <ul class="flex items-center">
-                <li class="mr-5">
+            <ul class="flex md:block items-center">
+                <li class="mr-5 md:mb-3 md:text-center">
                     <a href="{{ route('dashboard') }}" class="hover:text-gray-500 {{request()->is('/') ? 'text-blue-400' : ''}}">Dashboard</a>
                 </li>
-                <li class="mr-5">
+                <li class="mr-5 md:mb-3 md:text-center">
                     <a href="{{ route('table-product') }}" class="hover:text-gray-500 {{request()->is('table-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tabel Produk</a>
                 </li>
-                <li class="mr-5">
+                <li class="mr-5 md:mb-3 md:text-center">
                     <a href="{{ route('add-product') }}" class="hover:text-gray-500 {{request()->is('add-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tambah Produk</a>
                 </li>
             </ul>
         </div>
-        <div class="flex flex-row-reverse items-center"> 
+        <div class="md:hidden flex flex-row-reverse items-center"> 
             <div class="dropdown relative md:static">
                 <button class="menu-btn focus:outline-none focus:shadow-outline flex flex-wrap items-center">
                     <div class="w-8 h-8 overflow-hidden rounded-full">

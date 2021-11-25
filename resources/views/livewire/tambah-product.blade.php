@@ -15,7 +15,7 @@
                     <small class="text-red-500">{{$message}}</small>
                 @enderror
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div class="grid md:grid-cols-1 grid-cols-3 gap-4">
                 <div class="form-group mb-8">
                     <label for="harga_jual_minim" class="text-gray-600">Harga Jual Minim</label><br>
                     <input type="number" name="harga_jual_minim" class=" mt-3 border w-full rounded-lg p-2 @error('harga_jual_minim') border-red-500 @enderror" id="harga_jual_minim" wire:model="harga_jual_minim">
@@ -38,7 +38,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid md:grid-cols-1 grid-cols-2 gap-4">
                 <div class="form-group mb-8">
                     <label for="jumlah" class="text-gray-600">Jumlah</label><br>
                     <input type="number" name="jumlah" class=" mt-3 border w-full rounded-lg p-2 @error('jumlah') border-red-500 @enderror" id="jumlah" wire:model="jumlah">
@@ -55,9 +55,8 @@
                 </div>
             </div>
 
-            <div class="flex justify-between w-full mt-10">
-                <a href="{{ route('dashboard') }}" class="border border-red-500 px-10 py-2 rounded text-red-500 hover:bg-red-500 hover:text-white">kembali</a>
-                <div class="flex">
+            <div class="flex justify-end w-full mt-10">
+                <div class="flex md:justify-between md:w-full">
                     <button type="reset" class="hover:bg-red-400 bg-red-500 mr-5 px-10 py-2 rounded text-white">Reset</button>
                     <button class="hover:bg-blue-300 bg-blue-400 px-20 py-2 rounded text-white">Submit</button>
                 </div>

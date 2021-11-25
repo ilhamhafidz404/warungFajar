@@ -1,5 +1,5 @@
 <div>
-    <div class="card mt-10 p-10 grid grid-cols-3 gap-5">
+    <div class="card mt-10 p-10 grid md:grid-cols-1 grid-cols-3 gap-5">
         <div class="searchProduct  col-span-2">
             <h6 class="mb-5 font-bold">Cari Barang</h6>
             <input type="text" class="border w-full p-3 rounded-lg" placeholder="search.." wire:model="search">
@@ -36,7 +36,7 @@
     
     
     <section class="products mt-8">
-        <div class="grid grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-3">
+        <div class="grid grid-cols-4 md:grid-cols-1 gap-3">
             @forelse ($products as $product)
                 <div class="report-card">
                     <div class="card">

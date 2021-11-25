@@ -2,8 +2,8 @@
     {{-- <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"> --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>
 
-    <div class="card p-3 mt-10">
-        <table id="myTable" class="display w-full">
+    <div class="card p-3 mt-10" style="overflow: auto; white-space: nowrap">
+        <table id="myTable" class="display w-full" style="overflow: auto; white-space: nowrap">
             <thead>
                 <tr class="border p-5 bg-gray-900 text-white">
                     <th class="p-3">No</th>
