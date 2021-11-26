@@ -11,14 +11,13 @@
                 <!-- end top -->
                 <!-- bottom -->
                 <div class="mt-8">
-                    <h1 class="h5">{{ $products->count() }}</h1>
-                    <p>Total Dagangan</p>
+                    <h1 class="h5 text-gray-800">{{ $products->count() }}</h1>
+                    <p class="text-gray-600">Total Dagangan</p>
                 </div>                
                 <!-- end bottom -->
     
             </div>
         </div>
-        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
     </div>
     <div class="report-card">
         <div class="card">
@@ -32,14 +31,13 @@
 
                 <!-- bottom -->
                 <div class="mt-8">
-                    <h1 class="h5">Rp. {{ number_format($productModal) }}</h1>
-                    <p>Keseluruhan Modal</p>
+                    <h1 class="h5 text-gray-800">Rp. {{ number_format($productModal) }}</h1>
+                    <p class="text-gray-600">Keseluruhan Modal</p>
                 </div>                
                 <!-- end bottom -->
     
             </div>
         </div>
-        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
     </div>
     <div class="report-card">
         <div class="card">
@@ -53,14 +51,13 @@
 
                 <!-- bottom -->
                 <div class="mt-8">
-                    <h1 class="h5">Rp. {{ number_format($productJumlah) }}</h1>
-                    <p>Keseluruhan Jumlah</p>
+                    <h1 class="h5 text-gray-800">Rp. {{ number_format($productJumlah) }}</h1>
+                    <p class="text-gray-600">Keseluruhan Jumlah</p>
                 </div>                
                 <!-- end bottom -->
     
             </div>
         </div>
-        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
     </div>
     <div class="report-card">
         <div class="card">
@@ -74,14 +71,13 @@
 
                 <!-- bottom -->
                 <div class="mt-8">
-                    <h1 class="h5">Rp. {{ number_format($productTotal) }}</h1>
-                    <p>Keseluruhan Total</p>
+                    <h1 class="h5 text-gray-800">Rp. {{ number_format($productTotal) }}</h1>
+                    <p class="text-gray-600">Keseluruhan Total</p>
                 </div>                
                 <!-- end bottom -->
     
             </div>
         </div>
-        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
     </div> 
     @endif
 </div>

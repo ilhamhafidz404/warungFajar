@@ -1,7 +1,7 @@
 <div class="md:fixed md:w-full md:top-0 md:z-20 flex flex-row flex-wrap items-center bg-white p-6 border-b border-gray-300">
     <div class="flex-none w-56 flex flex-row items-center">
       <img src="{{asset('cleopatra/dist')}}/img/logo.png" class="w-10 flex-none">
-      <strong class="capitalize ml-1 flex-1">Warung Fajar</strong>
+      <strong class="capitalize ml-1 flex-1 text-gray-900">Warung Fajar</strong>
     </div> 
     
     <button id="navbarToggle" class="hidden md:block md:fixed right-0 mr-6">
@@ -12,13 +12,13 @@
         <div class="flex flex-row-reverse items-center">
             <ul class="flex md:block items-center">
                 <li class="mr-5 md:mb-3 md:text-center">
-                    <a href="{{ route('dashboard') }}" class="hover:text-gray-500 {{request()->is('/') ? 'text-blue-400' : ''}}">Dashboard</a>
+                    <a href="{{ route('dashboard') }}" class="hover:text-gray-500 text-gray-900 {{request()->is('/') ? 'text-blue-400' : ''}}">Dashboard</a>
                 </li>
                 <li class="mr-5 md:mb-3 md:text-center">
-                    <a href="{{ route('table-product') }}" class="hover:text-gray-500 {{request()->is('table-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tabel Produk</a>
+                    <a href="{{ route('table-product') }}" class="hover:text-gray-500 text-gray-900 {{request()->is('table-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tabel Produk</a>
                 </li>
                 <li class="mr-5 md:mb-3 md:text-center">
-                    <a href="{{ route('add-product') }}" class="hover:text-gray-500 {{request()->is('add-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tambah Produk</a>
+                    <a href="{{ route('add-product') }}" class="hover:text-gray-500 text-gray-900 {{request()->is('add-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tambah Produk</a>
                 </li>
             </ul>
         </div>
