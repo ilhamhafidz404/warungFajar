@@ -1,10 +1,10 @@
 <div>
     <div class="card mt-10 p-10 grid md:grid-cols-1 grid-cols-3 gap-5">
-        <div class="searchProduct  col-span-2">
+        <div class="searchProduct">
             <h6 class="mb-5 font-bold">Cari Barang</h6>
             <input type="text" class="border w-full p-3 rounded-lg" placeholder="search.." wire:model="search">
         </div>
-        <div class="filterCategory pb-2 overflow-auto" style="white-space: nowrap">
+        <div class="filterCategory pb-2 overflow-auto col-span-2" style="white-space: nowrap">
             <h6 class="mb-5 font-bold">Filter Kategori</h6>
             <input type="hidden" class="border" wire:model="filterCategory">
             @if ($filterCategory == 0)
@@ -52,7 +52,7 @@
                                 <button wire:click="getProduct({{ $product->id }})">
                                     <i class="fas fa-pen-alt bg-blue-500 text-white p-1 rounded"></i>
                                 </button>
-                                <button wire:click='destroy({{$product->id}})'>
+                                <button onclick="return confirm('Ingin Menghapus Data?') || event.stopImmediatePropagation()" wire:click='destroy({{$product->id}})'>
                                     <i class="fas fa-trash-alt bg-red-500 text-white p-1 rounded"></i>
                                 </button>
                             </div>
