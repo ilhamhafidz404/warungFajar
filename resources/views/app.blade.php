@@ -8,6 +8,7 @@
   @endif
   <link rel="shortcut icon" href="{{asset('cleopatra/dist')}}/img/fav.png" type="image/x-icon">  
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{asset('cleopatra/dist')}}/css/style.css"> 
   @livewireStyles 
   <title>Warung Fajar</title>
