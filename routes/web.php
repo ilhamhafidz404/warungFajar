@@ -1,6 +1,7 @@
 <?php
 
 use App\Exports\ProductsExport;
+use App\Http\Controllers\DebugController;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\TambahProduct;
 use App\Http\Livewire\TableList;
@@ -30,6 +31,8 @@ use RealRashid\SweetAlert\Facades\Alert;
 Route::get('/', Dashboard::class)->name('dashboard');
 Route::get('/add-product', TambahProduct::class)->name('add-product');
 Route::get('/table-product', TableList::class)->name('table-product');
+
+Route::get('/debug', DebugController::class)->name('debug');
 
 Route::get('/proucts/export', function () {
     return Excel::download(new ProductsExport, 'dataBarang-WarungFajar.xlsx');

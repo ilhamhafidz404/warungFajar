@@ -52,7 +52,7 @@
                                 <button wire:click="getProduct({{ $product->id }})">
                                     <i class="fas fa-pen-alt bg-blue-500 text-white p-1 rounded"></i>
                                 </button>
-                                <button onclick="return confirm('Ingin Menghapus Data?') || event.stopImmediatePropagation()" wire:click='destroy({{$product->id}})'>
+                                <button onclick="return confirm('Ingin Menghapus Data?') || event.stopImmediatePropagation()" wire:click='destroy({{ $product->id }})'>
                                     <i class="fas fa-trash-alt bg-red-500 text-white p-1 rounded"></i>
                                 </button>
                             </div>
