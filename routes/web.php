@@ -44,5 +44,5 @@ Route::post('/products/import', function (Request $request) {
     return back();
 })->name('import-product');
 Route::get('/download-template-excel', function () {
-    return response()->download(storage_path().'\app\databarang_warungFajar.xlsx');
+    return response()->download('databarang_warungFajar.xlsx');
 })->name('download-template-excel');

@@ -36,7 +36,7 @@
     
     
     <section class="products mt-8">
-        <div class="grid grid-cols-4 md:grid-cols-1 gap-3">
+        <div class="grid grid-cols-4 md:grid-cols-2 gap-3">
             @forelse ($products as $product)
                 <div class="report-card">
                     <div class="card">
@@ -44,8 +44,8 @@
                             <span class="category badge rounded-lg text-xs text-white absolute top-0 right-0 m-3" style="background: {{ $product->category->color }}">
                                 <i class="fas fa-{{$product->category->icon}}"></i> {{ $product->category->nama }}
                             </span>
-                            <div class="mt-8">
-                                <h3>{{ $product->nama }}</h3>
+                            <div class="mt-2">
+                                <h3>{{ $product->nama }} efjwebfkuwevfu wevfi uwevui f  vufivewifui</h3>
                                 <p>Modal : {{ number_format($product->modal) }}</p>
                             </div>
                             <div class="text-right">
