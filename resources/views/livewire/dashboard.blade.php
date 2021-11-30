@@ -4,7 +4,7 @@
             <h6 class="mb-5 font-bold">Cari Barang</h6>
             <input type="text" class="border w-full p-3 rounded-lg" placeholder="search.." wire:model="search">
         </div>
-        <div class="filterCategory pb-2 overflow-auto col-span-2" style="white-space: nowrap">
+        <div class="filterCategory pb-2 col-span-2" style="white-space: nowrap; overflow: auto">
             <h6 class="mb-5 font-bold">Filter Kategori</h6>
             <input type="hidden" class="border" wire:model="filterCategory">
             @if ($filterCategory == 0)
@@ -45,7 +45,7 @@
                                 <i class="fas fa-{{$product->category->icon}}"></i> {{ $product->category->nama }}
                             </span>
                             <div class="mt-2">
-                                <h3>{{ $product->nama }} efjwebfkuwevfu wevfi uwevui f  vufivewifui</h3>
+                                <h3>{{ $product->nama }}</h3>
                                 <p>Modal : {{ number_format($product->modal) }}</p>
                             </div>
                             <div class="text-right">
