@@ -10,19 +10,16 @@
       <i class="fad fa-chevron-double-down"></i>
     </button>
 
-    <div id="navbar" class="animated md:top-0 md:w-full md:left-0 md:border-t md:border-b md:border-gray-200 md:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-between items-center md:flex-col md:items-center md:p-5">
+    <div id="navbar" class="animated md:top-0 md:w-full md:left-0 md:border-t md:border-b md:border-gray-200 md:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-between items-center md:flex-col md:items-center md:p-2 md:py-5">
         <div class="flex flex-row-reverse items-center">
             <ul class="flex items-center">
-                <li class="hidden md:block mr-5 md:mb-3 md:text-center">
-                    <a href="{{ route('dashboard') }}" class="text-gray-700 font-bold">WARUNG FAJAR</a>
-                </li>
-                <li class="mr-5 md:mb-3 md:text-center ml-10">
+                <li class="mr-5 md:mb-3 md:text-center ml-10 md:ml-0">
                     <a href="{{ route('dashboard') }}" class="hover:text-gray-500 text-gray-900 {{request()->is('/') ? 'text-blue-400' : ''}}">Dashboard</a>
                 </li>
                 <li class="mr-5 md:mb-3 md:text-center">
                     <a href="{{ route('table-product') }}" class="hover:text-gray-500 text-gray-900 {{request()->is('table-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tabel Produk</a>
                 </li>
-                <li class="mr-5 md:mb-3 md:text-center">
+                <li class="mr-5 md:mr-0 md:mb-3 md:text-center">
                     <a href="{{ route('add-product') }}" class="hover:text-gray-500 text-gray-900 {{request()->is('add-product') ? 'text-blue-400' : ''}}" class="hover:text-gray-500">Tambah Produk</a>
                 </li>
             </ul>
